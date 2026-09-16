@@ -3,50 +3,51 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { useState } from 'react'
-
 import { services } from '@/lib/site-data'
 
 export function ServiceList() {
-    const [active, setActive] = useState(0)
+    const duplicatedServices = [...services, ...services]
 
     return (
-        <div className="service-list">
-            {services.map((item, index) => (
-                <Link
-                    href="/services"
-                    key={item.number}
-                    className={`service-row ${active === index ? 'is-active' : ''
-                        }`}
-                    onMouseEnter={() => setActive(index)}
-                >
-                    <span className="service-number">
-                        {item.number}
-                    </span>
+        <div className="services-marquee">
+            <div className="services-marquee-window">
+                <div className="services-marquee-track">
+                    {duplicatedServices.map((item, index) => (
+                        <Link
+                            href="/services"
+                            key={`${item.number}-${index}`}
+                            className="service-slide"
+                        >
+                            <div className="service-slide-image">
+                                <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    fill
+                                    sizes="340px"
+                                />
 
-                    <span className="service-title">
-                        {item.title}
-                    </span>
+                                <div className="service-slide-overlay" />
+                            </div>
 
-                    <span className="service-desc">
-                        {item.text}
-                    </span>
+                            <div className="service-slide-content">
+                                <div className="service-slide-top">
+                                    <span>{item.number}</span>
 
-                    <ArrowUpRight
-                        className="service-arrow"
-                        size={22}
-                    />
+                                    <span className="service-slide-arrow">
+                                        <ArrowUpRight size={19} />
+                                    </span>
+                                </div>
 
-                    <div className="service-preview">
-                        <Image
-                            src={item.image}
-                            alt=""
-                            fill
-                            sizes="300px"
-                        />
-                    </div>
-                </Link>
-            ))}
+                                <div className="service-slide-bottom">
+                                    <h3>{item.title}</h3>
+
+                                    <p>{item.text}</p>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
