@@ -1,15 +1,14 @@
 
 import { CTA } from '@/components/CTA'
-import { CapabilitiesSection } from '@/components/hero/Capabilities'
-import { ClientStrip } from '@/components/hero/ClientStrip'
-import { Hero } from '@/components/hero/Hero'
-import { IndustrySection } from '@/components/hero/Industries'
-import { IntroSection } from '@/components/hero/IntroSection'
-import { PrinciplesSection } from '@/components/hero/Principles'
-import { ProcessSection } from '@/components/hero/Process'
-import { StatementSection } from '@/components/hero/Statement'
-import { TestimonialSection } from '@/components/hero/Testimonial'
-import { WorkSection } from '@/components/hero/WorkSection'
+import { CapabilitiesSection } from '@/components/home/Capabilities'
+import { ClientStrip } from '@/components/home/ClientStrip'
+import { Hero } from '@/components/home/Hero'
+import { IndustrySection } from '@/components/home/Industries'
+import { IntroSection } from '@/components/home/IntroSection'
+import { PrinciplesSection } from '@/components/home/Principles'
+import { ProcessSection } from '@/components/home/Process'
+import { StatementSection } from '@/components/home/Statement'
+import { WorkSection } from '@/components/home/WorkSection'
 
 export default function Page() {
   return (

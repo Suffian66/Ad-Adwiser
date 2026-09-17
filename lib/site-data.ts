@@ -3,7 +3,7 @@ export const navItems = [
   { label: 'Services', href: '/services' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Industries', href: '/industries' },
-  { label: 'Case Studies', href: '/case-studies' },
+  // { label: 'Case Studies', href: '/case-studies' },
 ]
 
 export const clients = ['Pepsi', 'Aquafina', 'Mirinda', '7UP', 'Changan', 'ISUZU', 'KIA MOTORS', "Wall's", 'Magnum', 'TRESemmé', 'Fair & Lovely']

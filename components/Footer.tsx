@@ -35,15 +35,15 @@ export function Footer() {
                             className="footer-logo"
                         >
                             <img
-                                src="/logo2.jpg"
+                                src="/logo-dark.png"
                                 alt="AD ADWISER"
                             />
                         </Link>
 
                         <p>
-                            Transforming ideas
-                            <br />
-                            into reality.
+                            Transforming ideas into reality
+                            {/* <br />
+                            into reality. */}
                         </p>
 
                     </div>
