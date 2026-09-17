@@ -1,130 +1,174 @@
 import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
-import { logoUrl } from '@/lib/site-data'
+const exploreLinks = [
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Industries', href: '/industries' },
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Contact', href: '/contact' },
+]
+
+const capabilities = [
+    'Branding & Retail',
+    'Architectural Branding',
+    'OOH Advertising',
+    'Events & 3D Design',
+    'Commercial Execution',
+]
 
 export function Footer() {
     return (
         <footer className="site-footer">
-            <div className="container footer-grid">
 
-                {/* Brand */}
-                <div>
-                    <Link
-                        href="/"
-                        className="footer-logo"
-                    >
-                        <img
-                            src='/logo2.png'
-                            alt="AD ADWISER"
-                        />
-                    </Link>
+            <div className="container">
 
-                    <p className="footer-tagline">
-                        Transforming ideas
-                        <br />
-                        into reality.
-                    </p>
-                </div>
+                <div className="footer-main">
 
-                {/* Explore */}
-                <div>
-                    <p className="eyebrow footer-label">
-                        Explore
-                    </p>
+                    {/* Brand */}
 
-                    <div className="footer-links">
-                        {[
-                            'About',
-                            'Services',
-                            'Portfolio',
-                            'Industries',
-                            'Case Studies',
-                            'Contact',
-                        ].map((x) => (
-                            <Link
-                                key={x}
-                                href={`/${x === 'About'
-                                    ? 'about'
-                                    : x.toLowerCase().replaceAll(' ', '-')
-                                    }`}
+                    <div className="footer-brand">
+
+                        <Link
+                            href="/"
+                            className="footer-logo"
+                        >
+                            <img
+                                src="/logo2.jpg"
+                                alt="AD ADWISER"
+                            />
+                        </Link>
+
+                        <p>
+                            Transforming ideas
+                            <br />
+                            into reality.
+                        </p>
+
+                    </div>
+
+
+                    {/* Explore */}
+
+                    <div className="footer-column">
+
+                        <p className="footer-label">
+                            Explore
+                        </p>
+
+                        <nav className="footer-links">
+                            {exploreLinks.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                >
+                                    {item.label}
+                                    <ArrowUpRight size={12} />
+                                </Link>
+                            ))}
+                        </nav>
+
+                    </div>
+
+
+                    {/* Capabilities */}
+
+                    <div className="footer-column">
+
+                        <p className="footer-label">
+                            Capabilities
+                        </p>
+
+                        <div className="footer-links footer-services">
+                            {capabilities.map((item) => (
+                                <span key={item}>
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+
+                    </div>
+
+
+                    {/* Contact */}
+
+                    <div className="footer-column">
+
+                        <p className="footer-label">
+                            Find us
+                        </p>
+
+                        <address className="footer-contact">
+                            Karachi, Pakistan
+
+                            <a href="mailto:info@adadwiser.com.pk">
+                                info@adadwiser.com.pk
+                            </a>
+
+                            <a href="tel:+923118283345">
+                                +92 311 8283345
+                            </a>
+                        </address>
+
+                        <div className="socials">
+
+                            <a
+                                href="#"
+                                aria-label="Instagram"
                             >
-                                {x}
-                            </Link>
-                        ))}
+                                IG
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="LinkedIn"
+                            >
+                                LI
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Facebook"
+                            >
+                                FB
+                            </a>
+
+                        </div>
+
                     </div>
+
                 </div>
 
-                {/* Capabilities */}
-                <div>
-                    <p className="eyebrow footer-label">
-                        Capabilities
-                    </p>
 
-                    <div className="footer-links">
-                        <span>Branding & Retail</span>
-                        <span>Architectural Branding</span>
-                        <span>OOH Advertising</span>
-                        <span>Events & 3D Design</span>
-                        <span>Commercial Execution</span>
-                    </div>
+                {/* Brand colour line */}
+
+                <div className="footer-color-line">
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
                 </div>
 
-                {/* Contact */}
-                <div>
-                    <p className="eyebrow footer-label">
-                        Find us
-                    </p>
 
-                    <p className="footer-contact">
-                        Karachi, Pakistan
-                        <br />
+                {/* Bottom */}
 
-                        <a href="mailto:info@adadwiser.com.pk">
-                            info@adadwiser.com.pk
-                        </a>
+                <div className="footer-bottom">
 
-                        <br />
+                    <span>
+                        © 2026 AD ADWISER. All Rights Reserved.
+                    </span>
 
-                        <a href="tel:+923118283345">
-                            +92 311 8283345
-                        </a>
-                    </p>
+                    <span>
+                        Branding · Retail · Experience · Execution
+                    </span>
 
-                    <div className="socials">
-                        <a
-                            href="#"
-                            aria-label="Instagram"
-                        >
-                            IG
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="LinkedIn"
-                        >
-                            LI
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="Facebook"
-                        >
-                            FB
-                        </a>
-                    </div>
                 </div>
 
             </div>
 
-            <div className="container footer-bottom">
-                <span>
-                    © 2026 AD ADWISER. All Rights Reserved.
-                </span>
-
-                <span>
-                    Branding · Retail · Experience · Execution
-                </span>
-            </div>
         </footer>
     )
 }

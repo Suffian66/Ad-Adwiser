@@ -7,16 +7,29 @@ type CTAProps = {
 }
 
 export function CTA({
-    title = 'Have an idea? Let’s build it.',
-    description = 'Tell us what you are building, launching or transforming. We will help turn the idea into an experience your audience remembers.',
+    title = "Have an idea? Let's build it.",
+    description = "Tell us what you're building, launching or transforming. We'll help turn the idea into something people remember.",
 }: CTAProps) {
     return (
         <section className="cta-band">
-            <div className="blueprint-ring ring-one" />
-            <div className="blueprint-ring ring-two" />
+
+            <div className="cta-orbit orbit-blue" />
+            <div className="cta-orbit orbit-yellow" />
+            <div className="cta-orbit orbit-red" />
+            <div className="cta-orbit orbit-green" />
+            <div className="cta-orbit orbit-purple" />
+            <div className="cta-orbit orbit-navy" />
+
+            <div className="cta-dot dot-blue" />
+            <div className="cta-dot dot-yellow" />
+            <div className="cta-dot dot-red" />
+            <div className="cta-dot dot-green" />
+            <div className="cta-dot dot-purple" />
 
             <div className="container cta-inner">
-                <div>
+
+                <div className="cta-content">
+
                     <p className="eyebrow">
                         Start a conversation
                     </p>
@@ -25,18 +38,20 @@ export function CTA({
                         {title}
                     </h2>
 
-                    <p>
+                    <p className="cta-description">
                         {description}
                     </p>
+
+                    <Link
+                        href="/contact"
+                        className="cta-button"
+                    >
+                        <span>Start a project</span>
+                        <ArrowUpRight size={19} />
+                    </Link>
+
                 </div>
 
-                <Link
-                    href="/contact"
-                    className="button button-white"
-                >
-                    Start a project
-                    <ArrowUpRight size={18} />
-                </Link>
             </div>
         </section>
     )

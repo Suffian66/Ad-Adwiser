@@ -1,49 +1,46 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowDownRight } from 'lucide-react'
-
+import { ArrowUpRight } from 'lucide-react'
 import { industries } from '@/lib/site-data'
 
 type IndustryGridProps = {
     limit?: number
 }
 
-export function IndustryGrid({
-    limit,
-}: IndustryGridProps) {
-    const list = limit
-        ? industries.slice(0, limit)
-        : industries
+export function IndustryGrid({ limit }: IndustryGridProps) {
+    const list = limit ? industries.slice(0, limit) : industries
 
     return (
-        <div className="industry-grid">
-            {list.map((item) => (
+        <div className="industry-list">
+            {list.map((item, index) => (
                 <Link
                     href="/industries"
-                    className="industry-card"
+                    className="industry-row"
                     key={item.title}
                 >
-                    <Image
-                        src={item.image}
-                        alt={`${item.title} brand environment`}
-                        fill
-                        sizes="(max-width: 700px) 100vw, 33vw"
-                    />
+                    <div className="industry-number">
+                        {String(index + 1).padStart(2, '0')}
+                    </div>
 
-                    <div className="industry-overlay">
-                        <span>
-                            Industry
-                        </span>
+                    <div className="industry-info">
+                        <span>Industry</span>
 
-                        <h3>
-                            {item.title}
-                        </h3>
+                        <h3>{item.title}</h3>
 
-                        <p>
-                            {item.text}
-                        </p>
+                        <p>{item.text}</p>
+                    </div>
 
-                        <ArrowDownRight size={20} />
+                    <div className="industry-image">
+                        <Image
+                            src={item.image}
+                            alt={`${item.title} brand environment`}
+                            fill
+                            sizes="(max-width: 900px) 40vw, 280px"
+                        />
+                    </div>
+
+                    <div className="industry-arrow">
+                        <ArrowUpRight size={24} />
                     </div>
                 </Link>
             ))}

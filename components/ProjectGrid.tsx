@@ -1,284 +1,220 @@
-// import Image from 'next/image'
-// import Link from 'next/link'
-// import { ArrowUpRight } from 'lucide-react'
-
-// import { projects } from '@/lib/site-data'
-
-// type ProjectGridProps = {
-//     limit?: number
-//     projects?: typeof projects
-// }
-
-// export function ProjectGrid({
-//     limit,
-//     projects: projectList,
-// }: ProjectGridProps) {
-//     const source = projectList ?? projects
-
-//     const list = limit
-//         ? source.slice(0, limit)
-//         : source
-
-//     return (
-//         <div className="project-grid">
-//             {list.map((project) => (
-//                 <Link
-//                     href="/portfolio"
-//                     className={`project-card project-${project.size}`}
-//                     key={project.title}
-//                 >
-//                     <Image
-//                         src={project.image}
-//                         alt={`${project.title} ${project.category}`}
-//                         fill
-//                         sizes="(max-width: 700px) 100vw, 50vw"
-//                     />
-
-//                     <div className="project-overlay">
-//                         <span>
-//                             {project.category}
-//                         </span>
-
-//                         <h3>
-//                             {project.title}
-//                         </h3>
-
-//                         <ArrowUpRight size={24} />
-//                     </div>
-//                 </Link>
-//             ))}
-//         </div>
-//     )
-// }
-
-
-
-
-// import Image from 'next/image'
-// import Link from 'next/link'
-// import { ArrowUpRight } from 'lucide-react'
-// import { projects } from '@/lib/site-data'
-
-// type ProjectGridProps = {
-//     limit?: number
-//     projects?: typeof projects
-// }
-
-// export function ProjectGrid({
-//     limit,
-//     projects: projectList,
-// }: ProjectGridProps) {
-//     const source = projectList ?? projects
-
-//     const list = limit
-//         ? source.slice(0, limit)
-//         : source
-
-//     return (
-//         <div className="project-showcase">
-//             <div className="project-showcase-line project-showcase-line-top" />
-
-//             {list.map((project, index) => (
-//                 <Link
-//                     href="/portfolio"
-//                     className={`project-feature project-feature-${index + 1} project-${project.size}`}
-//                     key={project.title}
-//                 >
-//                     <div className="project-feature-image">
-//                         <Image
-//                             src={project.image}
-//                             alt={`${project.title} ${project.category}`}
-//                             fill
-//                             sizes={
-//                                 index === 0
-//                                     ? "(max-width: 700px) 100vw, 70vw"
-//                                     : "(max-width: 700px) 100vw, 40vw"
-//                             }
-//                         />
-//                     </div>
-
-//                     <div className="project-feature-shade" />
-
-//                     <div className="project-feature-number">
-//                         {String(index + 1).padStart(2, '0')}
-//                     </div>
-
-//                     <div className="project-feature-content">
-//                         <div>
-//                             <span className="project-feature-category">
-//                                 {project.category}
-//                             </span>
-
-//                             <h3>{project.title}</h3>
-//                         </div>
-
-//                         <div className="project-feature-action">
-//                             <span>View project</span>
-
-//                             <span className="project-feature-arrow">
-//                                 <ArrowUpRight size={20} />
-//                             </span>
-//                         </div>
-//                     </div>
-
-//                     <div className="project-feature-accent" />
-//                 </Link>
-//             ))}
-
-//             <div className="project-showcase-line project-showcase-line-bottom" />
-//         </div>
-//     )
-// }
-
-
 'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+
+import {
+    ArrowLeft,
+    ArrowRight,
+    ArrowUpRight,
+} from 'lucide-react'
+
+import { useEffect, useState } from 'react'
+
 import { projects } from '@/lib/site-data'
+
+type Project = (typeof projects)[number] & {
+    images?: string[]
+    description?: string
+    location?: string
+}
 
 type ProjectGridProps = {
     limit?: number
-    projects?: typeof projects
+    projects?: Project[]
 }
 
 export function ProjectGrid({
     limit,
     projects: projectList,
 }: ProjectGridProps) {
-    const source = projectList ?? projects
+    const source = projectList ?? (projects as Project[])
 
     const list = limit
         ? source.slice(0, limit)
         : source
 
     const [active, setActive] = useState(0)
-    const [hovered, setHovered] = useState<number | null>(null)
+    const [isPaused, setIsPaused] = useState(false)
 
-    const intervalRef = useRef<NodeJS.Timeout | null>(null)
+    const project = list[active]
+
+    /*
+     * -------------------------------------------------------
+     * AUTO SLIDER
+     * -------------------------------------------------------
+     */
 
     useEffect(() => {
-        intervalRef.current = setInterval(() => {
+        if (list.length <= 1 || isPaused) return
+
+        const timer = setInterval(() => {
             setActive((current) => (current + 1) % list.length)
         }, 5000)
 
-        return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current)
-            }
-        }
-    }, [list.length])
+        return () => clearInterval(timer)
+    }, [list.length, isPaused])
 
-    const getRelativePosition = (index: number) => {
-        let difference = index - active
+    /*
+     * -------------------------------------------------------
+     * CONTROLS
+     * -------------------------------------------------------
+     */
 
-        if (difference > list.length / 2) {
-            difference -= list.length
-        }
+    const nextProject = () => {
+        setActive((current) => (current + 1) % list.length)
+    }
 
-        if (difference < -list.length / 2) {
-            difference += list.length
-        }
-
-        return difference
+    const previousProject = () => {
+        setActive((current) =>
+            current === 0
+                ? list.length - 1
+                : current - 1
+        )
     }
 
     const goTo = (index: number) => {
         setActive(index)
-
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current)
-        }
-
-        intervalRef.current = setInterval(() => {
-            setActive((current) => (current + 1) % list.length)
-        }, 5000)
     }
 
+    if (!project) {
+        return null
+    }
+
+    const projectImages =
+        project.images?.length
+            ? project.images.slice(0, 4)
+            : [project.image]
+
     return (
-        <div className="project-carousel">
+        <div
+            className="project-showcase"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+        >
 
-            <div className="project-carousel-stage">
+            {/* =====================================================
+                MAIN PROJECT
+            ===================================================== */}
 
-                <div className="project-carousel-glow" />
+            <div className="project-showcase-stage">
 
-                <div className="project-carousel-grid" />
+                {/* BACKGROUND */}
+                <div className="project-showcase-grid" />
 
-                {list.map((project, index) => {
-                    const position = getRelativePosition(index)
+                <div className="project-showcase-glow" />
 
-                    const isActive = position === 0
-                    const isHovered = hovered === index
 
-                    return (
-                        <Link
-                            href="/portfolio"
-                            key={project.title}
-                            className={[
-                                'project-carousel-card',
-                                active === index ? 'is-center' : '',
-                                hovered === index ? 'is-hovered' : '',
-                            ].join(' ')}
-                            style={{
-                                '--card-position': getRelativePosition(index),
-                            } as React.CSSProperties}
-                            onMouseEnter={() => {
-                                setHovered(index)
+                {/* =================================================
+                    LEFT — IMAGE COMPOSITION
+                ================================================= */}
 
-                                if (index !== active) {
-                                    goTo(index)
-                                }
-                            }}
-                            onMouseLeave={() => setHovered(null)}
-                            onClick={() => goTo(index)}
-                        >
+                <div className="project-showcase-visual">
 
-                            <div className="project-carousel-image">
-                                <Image
-                                    src={project.image}
-                                    alt={`${project.title} ${project.category}`}
-                                    fill
-                                    sizes="(max-width: 700px) 82vw, 430px"
-                                />
-                            </div>
+                    <div className="project-image-stack">
 
-                            <div className="project-carousel-overlay" />
-
-                            <div className="project-carousel-number">
-                                {String(index + 1).padStart(2, '0')}
-                            </div>
-
-                            <div className="project-carousel-info">
-
-                                <div>
-                                    <span>
-                                        {project.category}
-                                    </span>
-
-                                    <h3>
-                                        {project.title}
-                                    </h3>
+                        {projectImages.map(
+                            (image, imageIndex) => (
+                                <div
+                                    key={`${image}-${imageIndex}`}
+                                    className={`project-stack-image image-${imageIndex + 1}`}
+                                >
+                                    <Image
+                                        src={image}
+                                        alt={`${project.title} project image`}
+                                        fill
+                                        sizes="(max-width: 700px) 205px, 290px"
+                                    />
                                 </div>
+                            )
+                        )}
 
-                                <div className="project-carousel-arrow">
-                                    <ArrowUpRight size={20} />
-                                </div>
+                        <div className="project-image-shadow" />
 
-                            </div>
+                    </div>
 
-                            <div className="project-carousel-accent" />
+                    <div className="project-visual-number">
+                        {String(active + 1).padStart(2, '0')}
+                    </div>
 
-                        </Link>
-                    )
-                })}
+                </div>
+
+
+                {/* =================================================
+                    RIGHT — CONTENT
+                ================================================= */}
+
+                <div className="project-showcase-content">
+
+                    <div className="project-content-top">
+
+                        <span className="project-category">
+                            {project.category}
+                        </span>
+
+                        <span className="project-index">
+                            {String(active + 1).padStart(2, '0')}
+                            {' / '}
+                            {String(list.length).padStart(2, '0')}
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        {project.title}
+                    </h3>
+
+
+                    <div className="project-content-line" />
+
+
+                    <p>
+                        {project.description ||
+                            'A carefully crafted brand experience designed to create visibility, impact and lasting impressions.'}
+                    </p>
+
+
+                    {project.location && (
+                        <div className="project-location">
+
+                            <span>
+                                Location
+                            </span>
+
+                            <strong>
+                                {project.location}
+                            </strong>
+
+                        </div>
+                    )}
+
+
+                    <Link
+                        href="/portfolio"
+                        className="project-view-button"
+                    >
+                        <span className="project-view-label">
+                            View project
+                        </span>
+
+                        <span className="project-view-icon">
+                            <ArrowUpRight size={18} />
+                        </span>
+                    </Link>
+
+                </div>
 
             </div>
 
-            <div className="project-carousel-controls">
 
-                <div className="project-carousel-progress">
+            {/* =====================================================
+                CONTROLS
+            ===================================================== */}
+
+            <div className="project-showcase-controls">
+
+                <div className="project-showcase-progress">
 
                     {list.map((_, index) => (
                         <button
@@ -296,14 +232,25 @@ export function ProjectGrid({
 
                 </div>
 
-                <div className="project-carousel-counter">
-                    <span>
-                        {String(active + 1).padStart(2, '0')}
-                    </span>
 
-                    <i>/</i>
+                <div className="project-showcase-arrows">
 
-                    {String(list.length).padStart(2, '0')}
+                    <button
+                        type="button"
+                        onClick={previousProject}
+                        aria-label="Previous project"
+                    >
+                        <ArrowLeft size={18} />
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={nextProject}
+                        aria-label="Next project"
+                    >
+                        <ArrowRight size={18} />
+                    </button>
+
                 </div>
 
             </div>

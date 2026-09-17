@@ -18,21 +18,21 @@ export default function Page() {
 
       <ClientStrip />
 
-      <IntroSection />
-
       <CapabilitiesSection />
+
+      <ProcessSection />
+
+      <IntroSection />
 
       <WorkSection />
 
       <PrinciplesSection />
 
-      <ProcessSection />
-
       <IndustrySection />
 
       <StatementSection />
 
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       <CTA />
     </main>

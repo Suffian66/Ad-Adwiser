@@ -8,7 +8,7 @@ export function IndustrySection() {
 
                 <SectionHeading
                     eyebrow="Where we work"
-                    title="Built for different industries. Designed for impact."
+                    title="Different industries. One approach: make an impact."
                 />
 
                 <IndustryGrid limit={6} />

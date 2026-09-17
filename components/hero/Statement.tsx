@@ -1,45 +1,77 @@
-const statements = [
+import Image from 'next/image'
+
+const gallery = [
     {
-        title: 'END-TO-END',
-        text: 'Creative to execution',
+        image: '/team-working-1.jpg',
+        label: '01 — INSTALLATION',
+        location: 'Karachi',
+        className: 'gallery-image-large',
     },
     {
-        title: 'MULTI-SECTOR',
-        text: 'Brand experiences across industries',
+        image: '/team-working-2.jpg',
+        label: '02 — FABRICATION',
+        location: 'Lahore',
+        className: 'gallery-image-small',
     },
     {
-        title: 'CONCEPT TO COMPLETION',
-        text: 'One partner from idea to installation',
+        image: '/team-working-3.jpg',
+        label: '03 — SITE TEAM',
+        location: 'Gujrat',
+        className: 'gallery-image-wide',
     },
     {
-        title: 'NATIONWIDE',
-        text: 'Local expertise with broad capability',
+        image: '/team-working-4.jpg',
+        label: '04 — EXECUTION',
+        location: 'Islamabad',
+        className: 'gallery-image-small',
     },
 ]
 
 export function StatementSection() {
     return (
-        <section className="statement-section">
-            <div className="container statement-grid">
+        <section className="work-gallery-section">
+            <div className="container">
 
-                <div>
-                    <p className="eyebrow eyebrow-red">
-                        What scale looks like
+                <div className="work-gallery-heading">
+                    <div>
+                        <p className="eyebrow eyebrow-light work-gallery-h-people">
+                            The People
+                        </p>
+
+                        <h2>
+                            Behind The Impact
+                            {/* <br />
+                            <em>behind the impact.</em> */}
+                        </h2>
+                    </div>
+
+                    <p className="work-gallery-intro">
+                        From fabrication and installation to the final
+                        experience, our people are at the heart of every
+                        project we deliver.
                     </p>
-
-                    <h2>
-                        One partner.
-                        <br />
-                        <em>Every touchpoint.</em>
-                    </h2>
                 </div>
 
-                <div className="statements">
-                    {statements.map((statement) => (
-                        <div key={statement.title}>
-                            <strong>{statement.title}</strong>
-                            <span>{statement.text}</span>
-                        </div>
+                <div className="work-gallery">
+                    {gallery.map((item) => (
+                        <figure
+                            key={item.image}
+                            className={`work-gallery-item ${item.className}`}
+                        >
+                            <div className="work-gallery-photo">
+                                <Image
+                                    src={item.image}
+                                    alt={item.label}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                            </div>
+
+                            <figcaption>
+                                <span>{item.label}</span>
+                                <small>{item.location}</small>
+                            </figcaption>
+                        </figure>
                     ))}
                 </div>
 
