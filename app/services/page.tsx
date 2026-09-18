@@ -1,87 +1,165 @@
 import Link from 'next/link'
-import { ArrowUpRight, ArrowDown } from 'lucide-react'
+import { ArrowUpRight, ArrowDown, ArrowRight } from 'lucide-react'
 
-import { serviceGroups } from '@/lib/site-data'
+import { services } from '@/lib/site-data'
 import { PageIntro } from '@/components/PageIntro'
 import { CTA } from '@/components/CTA'
+
+const serviceCategories = [
+    {
+        number: '01',
+        title: 'Facade & Structure',
+        services: [
+            'Curtain Wall / Spider Fitting',
+            'Aluminium Composite Panel Cladding',
+            'Aluminium Doors & Windows',
+            'Automatic Rolling Shutter',
+        ],
+    },
+    {
+        number: '02',
+        title: 'Interior & Finishing',
+        services: [
+            'Gypsum Ceiling',
+            'Electrical Work',
+            'Paint Work',
+            'Tile Fixing / Flooring',
+            'SS/MS Stairs Work',
+        ],
+    },
+    {
+        number: '03',
+        title: 'Brand & Retail',
+        services: ['3D Designing', 'Retail Solutions'],
+    },
+    {
+        number: '04',
+        title: 'Advertising & Experiences',
+        services: ['OOH Advertising', 'Events'],
+    },
+]
 
 export default function ServicesPage() {
     return (
         <main className="services-page">
 
-            {/* HERO */}
+            {/* =========================================================
+          HERO
+      ========================================================= */}
             <PageIntro
-                eyebrow="Capabilities"
-                title="The work behind"
-                accent="the work."
-                description="One integrated team for the strategic, creative and physical details that make brands matter."
-                image="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=85"
+                eyebrow="Capabilities / 13 Services"
+                title="We build what"
+                accent="brands need."
+                description="From architectural systems and interior finishing to retail environments, outdoor advertising and events — we turn ideas into physical experiences."
+                image="/services/services-hero.jpg"
             />
 
-            {/* CAPABILITY INDEX */}
-            <section className="services-index">
+            {/* =========================================================
+          WHAT WE BUILD
+      ========================================================= */}
+            <section className="services-build">
+                <div className="services-build-grid" />
+
                 <div className="container">
 
-                    <div className="services-index-top">
-                        <p className="eyebrow">What we do</p>
+                    <div className="services-build-intro">
+                        <div>
+                            <span className="services-label">01 / What we build</span>
+                        </div>
 
-                        <span>
-                            {String(serviceGroups.length).padStart(2, '0')} /
-                            CAPABILITY AREAS
-                        </span>
+                        <div className="services-build-heading">
+                            <h2>
+                                Different disciplines.
+                                <br />
+                                <em>One execution partner.</em>
+                            </h2>
+
+                            <p>
+                                We bring architectural fabrication, interior finishing,
+                                retail solutions and physical advertising together under
+                                one coordinated team.
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="services-index-list">
-                        {serviceGroups.map((group) => (
-                            <a
-                                href={`#service-${group.number}`}
-                                key={group.number}
-                                className="services-index-item"
+                    <div className="services-category-list">
+                        {serviceCategories.map((category) => (
+                            <div
+                                className="services-category"
+                                key={category.number}
                             >
-                                <span className="services-index-number">
-                                    {group.number}
-                                </span>
+                                <div className="services-category-number">
+                                    {category.number}
+                                </div>
 
-                                <span className="services-index-title">
-                                    {group.title}
-                                </span>
+                                <div className="services-category-main">
+                                    <h3>{category.title}</h3>
 
-                                <ArrowDown
-                                    className="services-index-arrow"
-                                    size={17}
+                                    <div className="services-category-items">
+                                        {category.services.map((service) => (
+                                            <span key={service}>
+                                                {service}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <ArrowUpRight
+                                    className="services-category-arrow"
+                                    size={24}
                                 />
-                            </a>
+                            </div>
                         ))}
                     </div>
 
                 </div>
             </section>
 
+            {/* =========================================================
+          SERVICES
+      ========================================================= */}
+            <section className="services-list-section">
 
-            {/* SERVICES */}
-            <section className="services-showcase">
+                {/* <div className="services-section-heading">
+                    <div className="container">
+                        <div className="services-heading-row">
+                            <span className="services-label">
+                                02 / Our services
+                            </span>
 
-                {serviceGroups.map((group, index) => (
-                    <section
-                        className={`service-showcase ${index % 2 === 1 ? 'service-showcase-dark' : ''}`}
-                        id={`service-${group.number}`}
-                        key={group.number}
-                    >
+                            <span className="services-heading-count">
+                                {String(services.length).padStart(2, '0')} SERVICES
+                            </span>
+                        </div>
 
-                        {/* background detail */}
-                        <div className="service-showcase-grid" />
+                        <h2>
+                            Built for the
+                            <br />
+                            <em>real world.</em>
+                        </h2>
+                    </div>
+                </div> */}
 
-                        <div className="container">
+                {services.map((service, index) => {
+                    const isReversed = index % 2 === 1
 
-                            <div className="service-showcase-header">
+                    return (
+                        <section
+                            className={`service-editorial ${isReversed ? 'service-editorial-reverse' : ''
+                                }`}
+                            id={`service-${service.number}`}
+                            key={service.number}
+                        >
 
-                                <div className="service-showcase-number">
-                                    {group.number}
-                                </div>
+                            {/* Architectural background detail */}
+                            <div className="service-editorial-grid" />
 
-                                <div className="service-showcase-meta">
+                            <div className="container">
+
+                                {/* Top metadata */}
+                                <div className="service-editorial-top">
                                     <span>
-                                        CAPABILITY / {group.number}
+                                        SERVICE / {service.number}
                                     </span>
 
                                     <span>
@@ -89,143 +167,158 @@ export default function ServicesPage() {
                                     </span>
                                 </div>
 
-                            </div>
+                                <div className="service-editorial-layout">
 
+                                    {/* IMAGE */}
+                                    <div className="service-editorial-image-wrap">
 
-                            <div className="service-showcase-layout">
+                                        <div className="service-editorial-number">
+                                            {service.number}
+                                        </div>
 
-                                {/* IMAGE */}
-                                <div className="service-showcase-image">
+                                        <div className="service-editorial-image">
+                                            <img
+                                                src={service.image}
+                                                alt={service.title}
+                                            />
 
-                                    <img
-                                        src={group.image}
-                                        alt={group.title}
-                                    />
-
-                                    <div className="service-image-overlay">
-                                        <span>
-                                            PHYSICAL / BRAND / EXPERIENCE
-                                        </span>
-                                    </div>
-
-                                </div>
-
-
-                                {/* CONTENT */}
-                                <div className="service-showcase-content">
-
-                                    <p className="eyebrow">
-                                        {group.number} / Capabilities
-                                    </p>
-
-                                    <h2>{group.title}</h2>
-
-                                    <p className="service-showcase-intro">
-                                        {group.intro}
-                                    </p>
-
-
-                                    {/* SERVICE LIST */}
-                                    <div className="service-list">
-
-                                        {group.items.map((item, itemIndex) => (
-
-                                            <div
-                                                className="service-list-item"
-                                                key={item}
-                                            >
-
-                                                <span className="service-list-number">
-                                                    {String(itemIndex + 1).padStart(2, '0')}
+                                            <div className="service-image-caption">
+                                                <span>
+                                                    DESIGN
                                                 </span>
 
-                                                <span className="service-list-name">
-                                                    {item}
+                                                <span>
+                                                    FABRICATION
                                                 </span>
 
-                                                <ArrowUpRight
-                                                    className="service-list-arrow"
-                                                    size={17}
-                                                />
-
+                                                <span>
+                                                    INSTALLATION
+                                                </span>
                                             </div>
-
-                                        ))}
+                                        </div>
 
                                     </div>
 
+                                    {/* CONTENT */}
+                                    <div className="service-editorial-content">
 
-                                    <Link
-                                        href="/contact"
-                                        className={`text-link ${index % 2 === 1 ? 'light-link' : ''}`}
-                                    >
-                                        Discuss this capability
-                                        <ArrowUpRight size={17} />
-                                    </Link>
+                                        <span className="services-label">
+                                            {service.number} / Capability
+                                        </span>
+
+                                        <h3>
+                                            {service.title}
+                                        </h3>
+
+                                        <p className="service-editorial-description">
+                                            {service.text}
+                                        </p>
+
+                                        <div className="service-editorial-rule" />
+
+                                        <div className="service-editorial-bottom">
+
+                                            <span className="service-editorial-small">
+                                                AD ADWISER
+                                                <br />
+                                                PHYSICAL BRAND
+                                                <br />
+                                                EXECUTION
+                                            </span>
+
+                                            <Link
+                                                href="/contact"
+                                                className="service-editorial-link"
+                                            >
+                                                Discuss this service
+                                                <ArrowUpRight size={18} />
+                                            </Link>
+
+                                        </div>
+
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                {/* Bottom metadata */}
+                                <div className="service-editorial-footer">
+                                    <span>
+                                        {service.number}
+                                    </span>
 
+                                    <span className="service-footer-line" />
 
-                            {/* BOTTOM META */}
-                            <div className="service-showcase-footer">
-
-                                <span>
-                                    {group.items.length} SERVICES
-                                </span>
-
-                                <span className="service-footer-line" />
-
-                                <span>
-                                    STRATEGY / DESIGN / EXECUTION
-                                </span>
+                                    <span>
+                                        PHYSICAL / BRAND / EXPERIENCE
+                                    </span>
+                                </div>
 
                             </div>
-
-                        </div>
-
-                    </section>
-                ))}
+                        </section>
+                    )
+                })}
 
             </section>
 
+            {/* =========================================================
+          MID-PAGE STATEMENT
+      ========================================================= */}
+            <section className="services-break">
 
-            {/* CLOSING STATEMENT */}
-            <section className="services-statement">
+                <div className="services-break-grid" />
 
                 <div className="container">
 
-                    <div className="services-statement-number">
-                        01
+                    <div className="services-break-top">
+                        <span className="services-break-number">
+                            13
+                        </span>
+
+                        <span className="services-label light">
+                            Services / One team
+                        </span>
                     </div>
 
-                    <h2>
-                        One team.
-                        <br />
-                        <em>From idea to installation.</em>
-                    </h2>
+                    <div className="services-break-content">
 
-                    <div className="services-statement-bottom">
+                        <h2>
+                            One team.
+                            <br />
+                            <em>Endless possibilities.</em>
+                        </h2>
 
                         <p>
-                            Different disciplines. One coordinated approach.
-                            We bring creative thinking, technical expertise and
-                            physical execution together to deliver complete
-                            brand experiences.
+                            From the structure that carries a brand to the details
+                            people experience every day, we bring the right
+                            disciplines together to make the work happen.
                         </p>
 
-                        <Link href="/contact" className="button button-red">
-                            Start a project
-                            <ArrowUpRight size={18} />
-                        </Link>
+                    </div>
+
+                    <div className="services-break-bottom">
+
+                        <div className="services-break-line" />
+
+                        <span>
+                            DESIGN
+                        </span>
+
+                        <span>
+                            FABRICATION
+                        </span>
+
+                        <span>
+                            INSTALLATION
+                        </span>
+
+                        <span>
+                            EXECUTION
+                        </span>
 
                     </div>
 
                 </div>
-
             </section>
-
 
             <CTA />
 

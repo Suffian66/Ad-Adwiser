@@ -2,25 +2,25 @@ import Image from 'next/image'
 
 const gallery = [
     {
-        image: '/team-working-1.jpg',
+        image: '/about/story-installation.jpg',
         label: '01 — INSTALLATION',
         location: 'Karachi',
         className: 'gallery-image-large',
     },
     {
-        image: '/team-working-2.jpg',
+        image: '/about/story-detail.jpg',
         label: '02 — FABRICATION',
         location: 'Lahore',
         className: 'gallery-image-small',
     },
     {
-        image: '/team-working-3.jpg',
+        image: '/about/team-main.jpg',
         label: '03 — SITE TEAM',
         location: 'Gujrat',
         className: 'gallery-image-wide',
     },
     {
-        image: '/team-working-4.jpg',
+        image: '/about/journey-main.jpg',
         label: '04 — EXECUTION',
         location: 'Islamabad',
         className: 'gallery-image-small',

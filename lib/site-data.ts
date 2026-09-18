@@ -2,21 +2,104 @@ export const navItems = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Industries', href: '/industries' },
+  // { label: 'Industries', href: '/industries' },
   // { label: 'Case Studies', href: '/case-studies' },
 ]
 
-export const clients = ['Pepsi', 'Aquafina', 'Mirinda', '7UP', 'Changan', 'ISUZU', 'KIA MOTORS', "Wall's", 'Magnum', 'TRESemmé', 'Fair & Lovely']
+export const clients = ['Pepsi', 'Changan', 'ISUZU', 'KIA MOTORS', "Alaska Batteries", 'Proton', 'TRESemme', 'PSL', 'Walls']
 
 export const services = [
-  { number: '01', title: 'Brand & Retail Experiences', text: 'Distinctive environments that make brand promise tangible.', image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85' },
-  { number: '02', title: 'Architectural & Exterior Branding', text: 'Facades, elevations and signage engineered for recognition.', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85' },
-  { number: '03', title: 'Advertising & OOH', text: 'High-impact communication built for the real world.', image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85' },
-  { number: '04', title: '3D Design & Visualization', text: 'See the experience before it is built.', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85' },
-  { number: '05', title: 'Events & Brand Activations', text: 'Memorable moments that move people closer to brands.', image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85' },
-  { number: '06', title: 'Fabrication & Installation', text: 'Precision delivery from first material to final detail.', image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85' },
-  { number: '07', title: 'Interior & Commercial Finishing', text: 'Materials and craft that make spaces feel considered.', image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85' },
-  { number: '08', title: 'Custom Brand Solutions', text: 'One capable partner for the work that does not fit a template.', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85' },
+  {
+    number: '01',
+    title: 'Curtain Wall / Spider Fitting',
+    text: 'Complete glass facade solutions from design through installation.',
+    image:
+      '/services/curtain-wall.jpg',
+  },
+  {
+    number: '02',
+    title: 'Aluminium Composite Panel Cladding',
+    text: 'Durable ACP cladding solutions for modern commercial buildings.',
+    image:
+      '/services/aluminum-panel.jpg',
+  },
+  {
+    number: '03',
+    title: 'Aluminium Doors & Windows',
+    text: 'Custom aluminium and glass solutions from design to installation.',
+    image:
+      '/services/aluminum-doors.jpg',
+  },
+  {
+    number: '04',
+    title: 'Gypsum Ceiling',
+    text: 'Complete drywall and ceiling solutions for modern interiors.',
+    image:
+      '/services/gypsum-ceiling.jpg',
+  },
+  {
+    number: '05',
+    title: 'Automatic Rolling Shutter',
+    text: 'Custom rolling shutters for industrial, commercial and secure spaces.',
+    image:
+      '/services/shutter.jpg',
+  },
+  {
+    number: '06',
+    title: 'Electrical Work',
+    text: 'Safe and reliable electrical installations tailored to your needs.',
+    image:
+      '/services/electrical-work.jpg',
+  },
+  {
+    number: '07',
+    title: 'Paint Work',
+    text: 'Professional interior and exterior painting with quality finishes.',
+    image:
+      '/services/paint-works.jpg',
+  },
+  {
+    number: '08',
+    title: 'Tile Fixing / Flooring',
+    text: 'High-quality flooring and tile solutions for demanding spaces.',
+    image:
+      '/services/tile-fixing.jpg',
+  },
+  {
+    number: '09',
+    title: 'SS/MS Stairs Work',
+    text: 'Custom SS/MS stairways, railings and glass fitting solutions.',
+    image:
+      '/services/staircase.jpg',
+  },
+  {
+    number: '10',
+    title: '3D Designing',
+    text: 'Realistic 3D visualizations that bring your ideas to life.',
+    image:
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85',
+  },
+  {
+    number: '11',
+    title: 'Retail Solutions',
+    text: 'Tailored retail environments designed to engage customers.',
+    image:
+      '/services/retail.jpg',
+  },
+  {
+    number: '12',
+    title: 'OOH Advertising',
+    text: 'Bold outdoor advertising designed for high-traffic visibility.',
+    image:
+      '/services/ooh.jpg',
+  },
+  {
+    number: '13',
+    title: 'Events',
+    text: 'End-to-end events designed to create memorable brand experiences.',
+    image:
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85',
+  },
 ]
 
 export const projects = [
