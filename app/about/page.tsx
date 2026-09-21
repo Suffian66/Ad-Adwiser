@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <div className="container">
 
                     <div className="about-section-top">
-                        <p className="eyebrow">01 / Our story</p>
+                        <p className="eyebrow">Our story</p>
 
                         <span className="about-section-code">
                             PEOPLE / IDEAS / REALITY
@@ -279,7 +279,7 @@ export default function AboutPage() {
                 <div className="container">
 
                     <div className="about-section-top about-section-top-dark">
-                        <p className="eyebrow">02 / What we believe</p>
+                        <p className="eyebrow"> What we believe</p>
 
                         <span className="about-section-code">
                             FOUR PRINCIPLES / ONE STANDARD
@@ -417,12 +417,12 @@ export default function AboutPage() {
                 JOURNEY
             ===================================================== */}
 
-            <section className="about-journey section">
+            {/* <section className="about-journey section">
 
                 <div className="container">
 
                     <div className="about-section-top">
-                        <p className="eyebrow">03 / The journey</p>
+                        <p className="eyebrow"> The journey</p>
 
                         <span className="about-section-code">
                             FROM CONCEPT TO REALITY
@@ -516,6 +516,112 @@ export default function AboutPage() {
 
                 </div>
 
+            </section> */}
+            <section id="our-journey" className="about-journey section">
+                <div className="container">
+
+                    {/* SECTION HEADER */}
+                    <div className="about-section-top">
+                        <p className="eyebrow">Our journey</p>
+
+                        <span className="about-section-code">
+                            FROM CONCEPT TO REALITY
+                        </span>
+                    </div>
+
+
+                    {/* CEO MESSAGE */}
+                    <div className="journey-ceo-layout">
+
+                        {/* LEFT — CEO IMAGE */}
+                        <div className="journey-ceo-visual">
+
+                            <div className="journey-ceo-image">
+                                <img
+                                    src="/about/ceo.jpeg"
+                                    alt="CEO of AD ADWISER"
+                                />
+                            </div>
+
+                            <div className="journey-ceo-caption">
+
+                                <div>
+                                    <strong>[CEO NAME]</strong>
+
+                                    <span>
+                                        Founder & CEO
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {/* RIGHT — MESSAGE */}
+                        <div className="journey-ceo-message">
+
+                            <p className="story-kicker">
+                                Message from the CEO
+                            </p>
+
+                            <h2>
+                                Ideas are only
+                                <br />
+                                the <em>beginning.</em>
+                            </h2>
+
+                            <div className="journey-ceo-copy">
+
+                                <p className="journey-ceo-lead">
+                                    At AD ADWISER, we believe that every great
+                                    project begins with an idea — but an idea
+                                    only becomes meaningful when it is brought
+                                    into the real world.
+                                </p>
+
+                                <p>
+                                    Our journey has always been about connecting
+                                    creative thinking with practical execution.
+                                    We take the time to understand our clients,
+                                    their brands and the environments in which
+                                    their ideas need to exist.
+                                </p>
+
+                                <p>
+                                    From the first conversation to the final
+                                    installation, our team brings together
+                                    creativity, technical knowledge, materials
+                                    and craftsmanship to turn concepts into
+                                    something tangible.
+                                </p>
+
+                                <p>
+                                    For us, success is not simply about creating
+                                    something that looks impressive. It is about
+                                    creating work that performs, lasts and becomes
+                                    a meaningful part of the space it occupies.
+                                </p>
+
+                            </div>
+
+                            <div className="journey-ceo-signature">
+
+                                <span className="journey-ceo-signature-line" />
+
+                                <div>
+                                    <strong>
+                                        Ideas are only the beginning.
+                                    </strong>
+
+                                    <span>
+                                        We make them real.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
 
@@ -529,84 +635,131 @@ export default function AboutPage() {
 
                 <div className="container">
 
+                    {/* HEADER */}
                     <div className="about-section-top about-section-top-dark">
-
                         <p className="eyebrow">
-                            04 / Why we exist
+                            Why we exist
                         </p>
 
                         <span className="about-section-code">
                             PURPOSE / DIRECTION
                         </span>
-
                     </div>
 
 
+                    {/* INTRO */}
                     <div className="purpose-heading">
 
-                        <h2>
-                            Built with
-                            <br />
-                            <em>purpose.</em>
-                        </h2>
+                        <div className="purpose-heading-main">
+                            <span className="purpose-heading-small">
+                                OUR
+                            </span>
 
-                        <p>
-                            Everything we do comes back to one simple
-                            belief: physical brand experiences should
-                            have meaning, not just presence.
-                        </p>
+                            <h2>
+                                Built with
+                                <br />
+                                <em>purpose.</em>
+                            </h2>
+                        </div>
+
+                        <div className="purpose-heading-copy">
+
+                            <span className="purpose-heading-line" />
+
+                            <p>
+                                Everything we do comes back to one simple
+                                belief: physical brand experiences should
+                                have meaning, not just presence.
+                            </p>
+
+                        </div>
 
                     </div>
 
 
+                    {/* MISSION / VISION */}
                     <div className="purpose-grid">
 
-                        {missionVision.map((item) => (
+                        {missionVision.map((item, index) => (
+
                             <article
-                                className="purpose-card"
+                                className={`purpose-card ${index === 0
+                                    ? "purpose-card-mission"
+                                    : "purpose-card-vision"
+                                    }`}
                                 key={item.number}
                             >
 
-                                <div className="purpose-card-number">
+                                {/* BACKGROUND NUMBER */}
+                                <span className="purpose-card-ghost" >
                                     {item.number}
+                                </span>
+
+
+                                {/* TOP */}
+                                <div className="purpose-card-top">
+
+                                    {/* <div className="purpose-card-number">
+                                        {item.number}
+                                    </div> */}
+
+                                    <div className="purpose-card-label">
+                                        {item.label}
+                                    </div>
+
                                 </div>
 
-                                <div className="purpose-card-label">
-                                    {item.label}
+
+                                {/* MAIN CONTENT */}
+                                <div className="purpose-card-content">
+
+                                    {/* <span className="purpose-card-kicker">
+                                        {index === 0
+                                            ? "WHAT DRIVES US"
+                                            : "WHERE WE ARE GOING"}
+                                    </span> */}
+
+                                    <h3>
+                                        {item.title}
+                                    </h3>
+
+                                    <p>
+                                        {item.text}
+                                    </p>
+
                                 </div>
 
-                                <h3>
-                                    {item.title}
-                                </h3>
 
-                                <p>
-                                    {item.text}
-                                </p>
+                                {/* BOTTOM */}
+                                <div className="purpose-card-bottom">
 
-                                <span className="purpose-card-line" />
+                                    <span className="purpose-card-line" />
+
+                                </div>
 
                             </article>
+
                         ))}
 
                     </div>
 
                 </div>
 
-            </section>
+            </section >
 
 
             {/* =====================================================
                 PEOPLE
             ===================================================== */}
 
-            <section className="about-people section">
+            <section className="about-people section" >
 
                 <div className="container">
 
                     <div className="about-section-top">
 
                         <p className="eyebrow">
-                            05 / The people
+                            The people
                         </p>
 
                         <span className="about-section-code">
@@ -682,10 +835,10 @@ export default function AboutPage() {
 
                 </div>
 
-            </section>
+            </section >
 
             <CTA />
 
-        </main>
+        </main >
     )
 }

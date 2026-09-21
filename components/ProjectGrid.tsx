@@ -170,8 +170,15 @@ export function ProjectGrid({
 
 
                     <p>
-                        {project.description ||
-                            'A carefully crafted brand experience designed to create visibility, impact and lasting impressions.'}
+                        {(() => {
+                            const description =
+                                project.description ||
+                                'A carefully crafted brand experience designed to create visibility, impact and lasting impressions.'
+
+                            return description.length > 200
+                                ? `${description.slice(0, 195)}...`
+                                : description
+                        })()}
                     </p>
 
 

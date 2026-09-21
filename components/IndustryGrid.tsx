@@ -13,8 +13,7 @@ export function IndustryGrid({ limit }: IndustryGridProps) {
     return (
         <div className="industry-list">
             {list.map((item, index) => (
-                <Link
-                    href="/industries"
+                <div
                     className="industry-row"
                     key={item.title}
                 >
@@ -39,10 +38,10 @@ export function IndustryGrid({ limit }: IndustryGridProps) {
                         />
                     </div>
 
-                    <div className="industry-arrow">
+                    {/* <div className="industry-arrow">
                         <ArrowUpRight size={24} />
-                    </div>
-                </Link>
+                    </div> */}
+                </div>
             ))}
         </div>
     )

@@ -105,115 +105,152 @@ export const services = [
 export const projects = [
   {
     title: 'CHANGAN',
-    category: 'Architectural Branding',
+    category: 'ACP Cladding / Glass Elevation Work',
+    location: 'Gujrat / Karachi / Lahore / Quetta',
+
+    description:
+      'ACP cladding, glass elevation and interior lighting work for CHANGAN, creating a modern and refined showroom environment.The project combines clean architectural lines with illuminated interiors to strengthen the brand experience.From exterior finishes to interior lighting, every element was executed with precision and attention to detail.The result is a contemporary space that reflects CHANGAN’s bold and dynamic identity.',
+
+    image:
+      '/projects/changan-acp-cladding/1.jpeg',
+
+    images: [
+      '/projects/changan-acp-cladding/1.jpeg',
+      '/projects/changan-acp-cladding/2.jpeg',
+      '/projects/changan-acp-cladding/3.jpeg',
+      '/projects/changan-acp-cladding/4.jpeg',
+    ],
+  },
+
+  {
+    title: 'PEPSI',
+    category: 'Branding Work',
     location: 'Pakistan',
 
     description:
-      'A complete architectural branding experience combining exterior elevation, signage and visual identity to create a strong physical presence for CHANGAN.',
+      'Large-scale exterior branding work executed for PEPSI to create a strong and recognizable brand presence. The project focused on impactful exterior visuals designed for maximum visibility and brand recall. Careful attention was given to finishing, placement and on- site execution across the space. The result is a bold exterior that reinforces PEPSI’s identity in a highly visible environment.',
 
     image:
-      'https://images.unsplash.com/photo-1562519819-016930ada31b?auto=format&fit=crop&w=1400&q=85',
+      '/projects/pepsi/1.jpg',
 
     images: [
-      'https://images.unsplash.com/photo-1562519819-016930ada31b?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85',
+      '/projects/pepsi/1.jpg',
+      '/projects/pepsi/2.jpg',
+      '/projects/pepsi/3.jpg',
+      '/projects/pepsi/4.jpg',
+    ],
+  },
+
+  {
+    title: 'ISUZU / KIA MOTORS',
+    category: 'Elevation Work',
+    location: 'Pakistan',
+
+    description:
+      'Exterior elevation work for Isuzu, KIA Motors and PROTON, designed to create a strong and professional brand presence. The project focused on clean architectural finishes and distinctive exterior detailing. Each elevation was carefully executed to reflect the individual identity of the automotive brands. The result is a modern, high- visibility exterior that enhances the overall showroom presence.',
+
+    image:
+      '/projects/elevation-2/1.jpg',
+
+    images: [
+      '/projects/elevation-2/1.jpg',
+      '/projects/elevation-2/3.jpeg',
+      '/projects/elevation-2/4.jpeg',
+      '/projects/elevation-2/6.jpeg',
+    ],
+  },
+
+  {
+    title: "WALLS / MAGNUM / PSL",
+    category: 'Brand Activation',
+    location: 'Pakistan',
+
+    description:
+      'Brand activation work for Walls, MAGNUM, Fair & Lovely, TRESemmé and PSL. The projects focused on creating engaging physical experiences that connect brands with consumers. From impactful displays to on-ground visual execution, every element was designed for visibility. The result was a memorable brand presence that brought each campaign closer to its audience.',
+
+    image:
+      '/projects/miscellaneous/1.jpeg',
+
+    images: [
+      '/projects/miscellaneous/1.jpeg',
+      '/projects/miscellaneous/2.jpeg',
+      '/projects/miscellaneous/4.jpeg',
+      '/projects/miscellaneous/3.jpeg',
     ],
   },
 
   {
     title: 'ISUZU',
-    category: 'Exterior Execution',
-    location: 'Pakistan',
-
-    description:
-      'Large-scale exterior branding and execution designed to give the ISUZU brand a bold and highly visible presence within its automotive environment.',
-
-    image:
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85',
-
-    images: [
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=85',
-    ],
-  },
-
-  {
-    title: 'DEEPAL',
-    category: 'Retail Experience',
-    location: 'Karachi',
-
-    description:
-      'A contemporary retail and display environment created to translate the DEEPAL brand into an immersive physical customer experience.',
-
-    image:
-      'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=1400&q=85',
-
-    images: [
-      'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1605152276897-4f618f7d9f98?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85',
-    ],
-  },
-
-  {
-    title: "WALL'S / MAGNUM",
-    category: 'Brand Activation',
-    location: 'Pakistan',
-
-    description:
-      'An engaging brand activation designed to bring WALL’S and MAGNUM closer to consumers through memorable physical experiences and visual execution.',
-
-    image:
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=85',
-
-    images: [
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=85',
-    ],
-  },
-
-  {
-    title: 'KIA MOTORS',
     category: 'Brand Environment',
     location: 'Pakistan',
 
     description:
-      'A branded automotive environment built around KIA MOTORS, combining physical branding, architectural elements and customer-facing visual communication.',
+      'A branded automotive environment developed for ISUZU with a strong focus on exterior and interior branding. The project combined architectural elements, signage and visual detailing to strengthen brand presence. Every element was carefully executed to create a clean, professional and engaging environment. The result is a cohesive space that reflects ISUZU’s identity and enhances the customer experience.',
 
     image:
-      'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1400&q=85',
+      '/projects/isuzu/1.jpg',
 
     images: [
-      'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=85',
+      '/projects/isuzu/1.jpg',
+      '/projects/isuzu/2.jpg',
+      '/projects/isuzu/3.jpg',
+      '/projects/isuzu/4.jpg',
     ],
   },
 
   {
-    title: 'TRESemmé',
-    category: 'Retail & OOH',
-    location: 'Pakistan',
+    title: 'CHANGAN - SIALKOT',
+    category: 'Branding Work',
+    location: 'Sialkot, Pakistan',
 
     description:
-      'Retail and out-of-home brand execution created to increase visibility and deliver a consistent TRESemmé presence across high-traffic consumer environments.',
+      'Branding and execution work for the CHANGAN showroom in Sialkot. The project focused on creating a bold and modern automotive brand presence. Exterior branding, architectural detailing and visual elements were carefully executed. The result is a clean, professional showroom environment aligned with CHANGAN’s identity.',
 
     image:
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85',
+      '/projects/sialkot-changan/1.jpeg',
 
     images: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1200&q=85',
+      '/projects/sialkot-changan/1.jpeg',
+      '/projects/sialkot-changan/2.jpeg',
+      '/projects/sialkot-changan/3.jpeg',
+      '/projects/sialkot-changan/4.jpeg',
+    ],
+  },
+
+  {
+    title: 'DEEPAL DISPLAY',
+    category: 'Branding',
+    location: 'Karachi, Pakistan',
+
+    description:
+      'Display and branding work for DEEPAL in Karachi, designed to create a striking automotive presence. The project focused on clean, modern displays that complement the brand’s visual identity. Careful attention was given to materials, finishing and precise on- site installation. The result is a refined display environment that enhances visibility and customer engagement.Branding and execution work for the CHANGAN showroom in Sialkot.The project focused on creating a bold and modern automotive brand presence.Exterior branding, architectural detailing and visual elements were carefully executed.The result is a clean, professional showroom environment aligned with CHANGAN’s identity.',
+
+    image:
+      '/projects/deepal-karachi/2.jpeg',
+
+    images: [
+      '/projects/deepal-karachi/2.jpeg',
+      '/projects/deepal-karachi/1.jpeg',
+
+    ],
+  },
+
+  {
+    title: 'MEGA PROJECT',
+    category: 'Elevation Work',
+    location: 'Faisalabad, Lahore, Islamabad',
+
+    description:
+      'Large-scale exterior elevation work executed for a major corporate project across Faisalabad, Lahore and Islamabad. The project involved transforming multiple locations with a consistent and professional architectural identity. High - quality exterior finishes and precise execution were applied across the extensive development. A mega - scale project delivered with a strong focus on visual impact, durability and brand presence.',
+
+    image:
+      '/projects/elevation/3.jpeg',
+
+    images: [
+      '/projects/elevation/3.jpeg',
+      '/projects/elevation/4.jpeg',
+      '/projects/elevation/5.jpeg',
+      '/projects/elevation/6.jpeg',
     ],
   },
 ]

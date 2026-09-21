@@ -6,23 +6,23 @@ import { useEffect, useState } from 'react'
 
 const heroImages = [
     {
-        src: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2200&q=90',
+        src: '/projects/elevation/5.jpeg',
         alt: 'Modern architectural exterior',
     },
     {
-        src: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2200&q=90',
+        src: '/projects/elevation-2/1.jpg',
         alt: 'Creative brand design',
     },
     {
-        src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=90',
+        src: '/projects/isuzu/1.jpg',
         alt: 'Branded commercial interior',
     },
     {
-        src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2200&q=90',
+        src: '/projects/miscellaneous/2.jpeg',
         alt: 'Professional brand environment',
     },
     {
-        src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=90',
+        src: '/projects/pepsi/1.jpg',
         alt: 'Corporate brand experience',
     },
 ]
