@@ -8774,6 +8774,16 @@ blockquote {
     margin-bottom: 45px;
 }
 
+.contact-email {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact-phone {
+    display: block;
+    margin-bottom: 4px;
+}
+
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

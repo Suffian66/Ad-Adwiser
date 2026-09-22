@@ -51,7 +51,7 @@ export default function ServicesPage() {
                 title="We build what"
                 accent="brands need."
                 description="From architectural systems and interior finishing to retail environments, outdoor advertising and events — we turn ideas into physical experiences."
-                image="/services/services-hero.jpg"
+                image="/projects/isuzu/3.jpg"
             />
 
             {/* =========================================================

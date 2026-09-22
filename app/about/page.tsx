@@ -45,15 +45,15 @@ const beliefs = [
 
 const storyImages = [
     {
-        src: '/about/story-main.jpg',
+        src: '/projects/changan-acp-cladding/1.jpeg',
         alt: 'AD ADWISER team working on a project',
     },
     {
-        src: '/about/story-detail.jpg',
+        src: '/projects/elevation/4.jpeg',
         alt: 'AD ADWISER project execution detail',
     },
     {
-        src: '/about/story-installation.jpg',
+        src: '/projects/elevation/1.jpeg',
         alt: 'AD ADWISER team during installation',
     },
 ]
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 title="We make brands"
                 accent="visible in the real world."
                 description="An integrated advertising, branding and execution partner for organizations that want their presence to be seen, experienced and remembered."
-                image="/about/about-hero.jpg"
+                image="/projects/deepal-karachi/2.jpeg"
             />
 
             <section className="about-scroll-cue">

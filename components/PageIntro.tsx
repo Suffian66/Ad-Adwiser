@@ -24,7 +24,7 @@ export function PageIntro({
                   linear-gradient(
                     90deg,
                     rgba(11, 27, 54, 0.95),
-                    rgba(11, 27, 54, 0.55)
+                    rgba(11, 27, 54, 0.35)
                   ),
                   url(${image})
                 `,

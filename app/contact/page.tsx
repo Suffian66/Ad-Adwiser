@@ -247,46 +247,44 @@ export default function ContactPage() {
                         {/* EMAIL */}
 
                         <div className="contact-detail">
-
                             <Mail />
-
                             <div>
-
-                                <p className="eyebrow">
-                                    Email
-                                </p>
-
+                                <p className="eyebrow">Email</p>
                                 <p>
-                                    <a href="mailto:info@adadwiser.com.pk">
+                                    <span className="contact-email">
                                         info@adadwiser.com.pk
-                                    </a>
+                                    </span>
+                                    <span className="contact-email">
+                                        Faisal@adadwiser.com.pk
+                                    </span>
                                 </p>
-
                             </div>
-
                         </div>
 
 
                         {/* PHONE */}
 
                         <div className="contact-detail">
-
                             <Phone />
-
                             <div>
-
                                 <p className="eyebrow">
                                     Contact
                                 </p>
 
                                 <p>
-                                    <a href="tel:+923351373342">
-                                        0335 1373342
-                                    </a>
+                                    <span className="contact-phone">
+                                        +92 311 8283345
+
+                                    </span>
+                                    <span className="contact-phone">
+                                        +92 336 2175824
+
+                                    </span>
+                                    <span className="contact-phone">
+                                        +92 342 2800610
+                                    </span>
                                 </p>
-
                             </div>
-
                         </div>
 
 
@@ -314,14 +312,14 @@ export default function ContactPage() {
 
                 </div>
 
-            </section>
+            </section >
 
 
             {/* =====================================================
                 INFRASTRUCTURE CTA
             ===================================================== */}
 
-            <section className="red-cta contact-infrastructure-cta">
+            <section className="red-cta contact-infrastructure-cta" >
                 <div className="contact-cta-image">
                     <img
                         src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2200&q=85"
@@ -342,6 +340,6 @@ export default function ContactPage() {
                 </div>
             </section>
 
-        </main>
+        </main >
     )
 }

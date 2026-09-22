@@ -5,8 +5,8 @@ const exploreLinks = [
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Portfolio', href: '/portfolio' },
-    { label: 'Industries', href: '/industries' },
-    { label: 'Case Studies', href: '/case-studies' },
+    // { label: 'Industries', href: '/industries' },
+    // { label: 'Case Studies', href: '/case-studies' },
     { label: 'Contact', href: '/contact' },
 ]
 
@@ -100,18 +100,21 @@ export function Footer() {
                         </p>
 
                         <address className="footer-contact">
-                            Karachi, Pakistan
+                            <span>Image Tower, 2nd Floor</span>
+                            <span>FL 36, Block B, Gulshan-e-Jamal</span>
+                            <span>Near Nueplex Cinemas, Karachi</span>
+                            <span>Pakistan</span>
 
-                            <a href="mailto:info@adadwiser.com.pk">
+                            <span className="footer-contact-gap">
                                 info@adadwiser.com.pk
-                            </a>
+                            </span>
 
-                            <a href="tel:+923118283345">
-                                +92 311 8283345
-                            </a>
+                            <span>+92 311 8283345</span>
+                            <span>+92 336 2175824</span>
+                            <span>+92 342 2800610</span>
                         </address>
 
-                        <div className="socials">
+                        {/* <div className="socials">
 
                             <a
                                 href="#"
@@ -134,7 +137,7 @@ export function Footer() {
                                 FB
                             </a>
 
-                        </div>
+                        </div> */}
 
                     </div>
 

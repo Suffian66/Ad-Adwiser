@@ -54,7 +54,7 @@ export function IntroSection() {
                         touch and remember.
                     </p>
 
-                    <div className="intro-points">
+                    {/* <div className="intro-points">
 
                         <div>
                             <span>01</span>
@@ -80,7 +80,7 @@ export function IntroSection() {
                             </p>
                         </div>
 
-                    </div>
+                    </div> */}
 
                     <Link href="/about" className="text-link intro-link">
                         More about AD ADWISER
